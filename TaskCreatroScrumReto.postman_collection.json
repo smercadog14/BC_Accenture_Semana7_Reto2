@@ -1,0 +1,773 @@
+{
+	"info": {
+		"_postman_id": "5fd242a7-8c90-46da-a7f9-861ea0200ce7",
+		"name": "TaskCreatroScrumReto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "registerAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3MDdhNTBlMWUzYzQ0MjA2NDU3YjMiLCJuYW1lIjoiTWFzdGVyIEFkbWluIiwiZW1haWwiOiJtYXN0ZXJAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNzAyZWJjZWNiOWE0YWYwMWRiZTIxIiwiaWF0IjoxNjIyNjA5NzgxfQ.ehu7rML-kJP9rfrFmGUUhiUb-3MPuJoEVmSTEXHT0ZA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ADMIN\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b702ebcecb9a4af01dbe21\",\r\n    \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerAdmin Disable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MThjZjdjOWFiNDNjMzRhOWQ0NTYiLCJuYW1lIjoiQURNSU4iLCJlbWFpbCI6ImFkbWluQGNvcnJlby5jb20iLCJyb2xlSWQiOiI2MGI5MDdhMWMxZWNkMDM4OTAyODM3ZWMiLCJpYXQiOjE2MjI3NDM1MDJ9.mlEve55ewVi5eXC-DIqMNVLqpXiT4FpauLtrvcO4BiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ADMIN 2\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b907a1c1ecd038902837ec\",\r\n    \"active\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser/idUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3MDdhNTBlMWUzYzQ0MjA2NDU3YjMiLCJuYW1lIjoiTWFzdGVyIEFkbWluIiwiZW1haWwiOiJtYXN0ZXJAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNzAyZWJjZWNiOWE0YWYwMWRiZTIxIiwiaWF0IjoxNjIyNjEyNzA2fQ.P8qkIjJOYAHx7Xr5X9m4n1hSJlLg7WFxXpriX7yLeL4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser/60b90ffdaa724d04fcbf932d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser",
+								"60b90ffdaa724d04fcbf932d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser (Disable User)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3MDdhNTBlMWUzYzQ0MjA2NDU3YjMiLCJuYW1lIjoiTWFzdGVyIEFkbWluIiwiZW1haWwiOiJtYXN0ZXJAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNzAyZWJjZWNiOWE0YWYwMWRiZTIxIiwiaWF0IjoxNjIyNjEzODk2fQ.PhSzJeq5kUhQigvqaMEaYWKPwY85PJ4NjE8YEkXVCIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b7100bfdf003351c41934b\",\r\n    \"name\": \"Pepa\",\r\n    \"email\": \"pepa@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"60b702ebcecb9a4af01dbe21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/deleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser (Enable User)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3MDdhNTBlMWUzYzQ0MjA2NDU3YjMiLCJuYW1lIjoiTWFzdGVyIEFkbWluIiwiZW1haWwiOiJtYXN0ZXJAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNzAyZWJjZWNiOWE0YWYwMWRiZTIxIiwiaWF0IjoxNjIyNjExNDQ5fQ.2Xxw1jN1D5-Qw53JCVA1pKJ5FRHnejop3D63yr1Mylk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"60b711140387292a0c037720\",\r\n    \"name\": \"sergio mercado gutierrez\",\r\n    \"email\": \"smercadog@correo.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"\",\r\n    \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/updateUser/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"updateUser",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MThjZjdjOWFiNDNjMzRhOWQ0NTYiLCJuYW1lIjoiQURNSU4iLCJlbWFpbCI6ImFkbWluQGNvcnJlby5jb20iLCJyb2xlSWQiOiI2MGI5MDdhMWMxZWNkMDM4OTAyODM3ZWMiLCJpYXQiOjE2MjI3NDM1MDJ9.mlEve55ewVi5eXC-DIqMNVLqpXiT4FpauLtrvcO4BiA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@correo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "board",
+			"item": [
+				{
+					"name": "saveTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MGI5NWFhNzI0ZDA0ZmNiZjkzMmEiLCJuYW1lIjoic2VyZ2lvIiwiZW1haWwiOiJzbWVyY2Fkb0Bjb3JyZW8uY29tIiwicm9sZUlkIjoiNjBiOTA3YTZjMWVjZDAzODkwMjgzN2VkIiwiaWF0IjoxNjIyNzM5OTUxfQ.9Bd0xVm7c4iaukQY1f3FHWeFpBIcc917S3SIhn_1ZWU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Login\",\r\n    \"description\": \"Create veiw of login\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/saveTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"saveTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI5MGI5NWFhNzI0ZDA0ZmNiZjkzMmEiLCJuYW1lIjoic2VyZ2lvIG1lcmNhZG8gZ3V0aWVycmV6IiwiZW1haWwiOiJzbWVyY2Fkb2dAY29ycmVvLmNvbSIsInJvbGVJZCI6IjYwYjkwN2ExYzFlY2QwMzg5MDI4MzdlYyIsImlhdCI6MTYyMjc0OTM5MX0.jSz4EtoOyvsQkEOO6c1KIjVyN7-kPaX901_-E_d0GMw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Models\",\r\n    \"description\": \"Create Models of MongoDB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/saveTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"saveTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2ZWY2OWZmYWNkZDI1OWMyNWI0ZTkiLCJuYW1lIjoiUGVwaXRhIFBlcmxhIiwiZW1haWwiOiJwZXBpdGFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNmVmMzFmZmFjZGQyNTljMjViNGU3IiwiaWF0IjoxNjIyNjA0NzQ4fQ.kSlKLNRP3C4ZBhzbiFP_490JRKUZtD9UdMfbdUlzCPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/board/listTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"listTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2ZWY2OWZmYWNkZDI1OWMyNWI0ZTkiLCJuYW1lIjoiUGVwaXRhIFBlcmxhIiwiZW1haWwiOiJwZXBpdGFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNmVmMzFmZmFjZGQyNTljMjViNGU3IiwiaWF0IjoxNjIyNjA0NzQ4fQ.kSlKLNRP3C4ZBhzbiFP_490JRKUZtD9UdMfbdUlzCPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"60b6fa1e8aba654ff8f12008\",\r\n    \"name\": \"Crear pagina contactenos\",\r\n    \"status\": \"done\",\r\n    \"description\": \"frontend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/updateTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"updateTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId (deleteUser)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI2ZWY2OWZmYWNkZDI1OWMyNWI0ZTkiLCJuYW1lIjoiUGVwaXRhIFBlcmxhIiwiZW1haWwiOiJwZXBpdGFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNmVmMzFmZmFjZGQyNTljMjViNGU3IiwiaWF0IjoxNjIyNjA0NzQ4fQ.kSlKLNRP3C4ZBhzbiFP_490JRKUZtD9UdMfbdUlzCPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/board/60b93132ffc5693104ff6664",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"60b93132ffc5693104ff6664"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "img",
+			"item": [
+				{
+					"name": "saveTaskImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI3OGVkODAzZTQ1MzE2NjQwMTc2MDIiLCJuYW1lIjoiUGVwaXRhIFBlcmxhIiwiZW1haWwiOiJwZXBpdGFAZ21haWwuY29tIiwicm9sZUlkIjoiNjBiNzg5ZDU1MmE5ZjU0ODUwMmE5NTJmIiwiaWF0IjoxNjIyNjUyOTc0fQ.zAhnBXyOBX0opRPtaQQt0w-dW4Zo5K72LrdeaWfz7QM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "asd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sanchez/Downloads/angular.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/board/saveTaskImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"board",
+								"saveTaskImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "registerRole-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"description\" : \"default user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerRole-admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"description\" : \"administrator\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/role/listRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"listRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sergio mercado\",\r\n    \"email\": \"smercado@correo.com\",\r\n    \"password\": \"1234\",\r\n    \"role\":\"60b907a1c1ecd038902837ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dina perez\",\r\n    \"email\": \"dperez@correo.com\",\r\n    \"password\": \"1234\",\r\n    \"role\":\"60b907a6c1ecd038902837ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerUser (Role default user)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cristian del rio\",\r\n    \"email\": \"cdelrio@correo.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers/name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/Juanito",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"Juanito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers/match \"name\",\"lastName\",\"incompleteName\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/listUsers/Pep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"Pep"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
