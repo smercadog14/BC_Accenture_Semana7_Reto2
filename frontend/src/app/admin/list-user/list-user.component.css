@@ -21,12 +21,7 @@ mat-form-field {
 
 .mat-icon {
   padding-right: 15px;
-}
-
-.mat-icon:hover {
-  color: #ff0000;
   cursor: pointer;
-  padding-right: 15px;
 }
 
 .enable {
@@ -34,26 +29,19 @@ mat-form-field {
   color: #ffffff;
 }
 
-.btInProgress {
-  background-color: #ffa500;
+.update {
+  background-color: #0062ff;
+  color: #ffffff;
+}
+
+.changeStatus {
+  background-color: #6a5acd;
   color: #ffffff;
 }
 
 .disable {
   background-color: #e6194b;
   color: #ffffff;
-}
-
-.btSelectDone {
-  color: #3cb44b;
-}
-
-.btSelectInProgress {
-  color: #ffa500;
-}
-
-.btSelectTodo {
-  color: #e6194b;
 }
 
 .text_center {

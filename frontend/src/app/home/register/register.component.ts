@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,11 @@ export class RegisterComponent implements OnInit {
   public successMessage: String;
   public errorMessage: String;
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private userS: UserService
+  ) {
     this.registerData = {};
     this.successMessage = '';
     this.errorMessage = '';
@@ -31,15 +36,13 @@ export class RegisterComponent implements OnInit {
       this.closeAlert();
       this.registerData = {};
     } else {
-      this.auth.registerUser(this.registerData).subscribe(
+      this.userS.registerUser(this.registerData).subscribe(
         (res: any) => {
-        
           localStorage.setItem('token', res.jwtToken);
           this.registerData = {};
           this.router.navigate(['/saveTask']);
         },
         (err) => {
-          
           this.errorMessage = err.error;
           this.closeAlert();
           this.registerData = {};

@@ -1,1 +1,90 @@
-<p>list-role works!</p>
+<div class="bg-component">
+    <div class="accordion_display">
+        <div class="accordion_size">
+            <div class="col-12 col-lg-12" *ngIf="successMessage">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <div class="alert-message">
+                        {{ successMessage }}
+                    </div>
+
+                    <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-12" *ngIf="errorMessage">
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <div class="alert-message">
+                        {{ errorMessage }}
+                    </div>
+
+                    <button type="button" class="close" (click)="closeX()" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+            </div>
+
+            <mat-accordion multi="true" *ngIf="rolesData.length">
+                <mat-expansion-panel *ngFor="let role of rolesData" hideToggle="false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="text_center">{{ role.name }}</span>
+                            <span class="spacer"></span>
+                            <button class="enable" *ngIf="role.active" mat-raised-button>
+                                Activado
+                            </button>
+                            <button class="disable" *ngIf="!role.active" mat-raised-button>
+                                Desactivado
+                            </button>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <mat-panel-description>
+
+
+                        <div class="col-12 col-lg-12" *ngIf="errorMessage">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <div class="alert-message">
+                                    {{ errorMessage }}
+                                </div>
+
+                                <button type="button" class="close" (click)="closeX()" data-dismiss="alert"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">X</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <mat-form-field>
+                                <input [(ngModel)]="role.name" matInput placeholder="Name" required />
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input [(ngModel)]="role.description" matInput placeholder="Email" required />
+                            </mat-form-field>
+
+                        </div>
+
+
+
+                    </mat-panel-description>
+
+                    <mat-action-row>
+                        <button class="update" (click)="updateRole(role)" mat-raised-button>
+                            Update
+                        </button>
+
+                        <button class=" changeStatus" (click)="deactivateRole(role)" mat-raised-button>
+                            Status
+                        </button>
+                        <span class=" spacer"></span>
+                        <mat-icon color="primary" (click)="deleteRole(role)">
+                            delete
+                        </mat-icon>
+                    </mat-action-row>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

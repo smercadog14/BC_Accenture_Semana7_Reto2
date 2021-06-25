@@ -42,11 +42,7 @@ const routes: Routes = [
     component: ListUserComponent,
     canActivate: [AuthGuard],
   },
-  {
-    path: 'registerUser',
-    component: RegisterUserComponent,
-    canActivate: [AuthGuard],
-  },
+
   {
     path: 'updateUser',
     component: UpdateUserComponent,
@@ -57,11 +53,7 @@ const routes: Routes = [
     component: ListRoleComponent,
     canActivate: [AuthGuard],
   },
-  {
-    path: 'registerRole',
-    component: RegisterRoleComponent,
-    canActivate: [AuthGuard],
-  },
+
   {
     path: 'updateRole',
     component: UpdateRoleComponent,
@@ -71,6 +63,28 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'registerUser',
+        component: RegisterUserComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'listUser',
+        component: ListUserComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'registerRole',
+        component: RegisterRoleComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'listRole',
+        component: ListRoleComponent,
+        canActivate: [AuthGuard],
+      },
+    ],
   },
 ];
 

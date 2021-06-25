@@ -95,7 +95,7 @@ router.delete("/deleteUser/:_id", Auth, UserAuth, Admin, async (req, res) => {
   if (!validId) return res.status(401).send("Process failed: Invalid id");
   const users = await User.findByIdAndDelete(req.params._id);
   if (!users) return res.status(401).send("Failed to delete user");
-  return res.status(200).send("User deleted");
+  return res.status(200).send({ message: "User deleted" });
 });
 
 router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
@@ -110,6 +110,14 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
 
   const hash = await bcrypt.hash(req.body.password, 10);
 
+  let active;
+
+  if (req.body.active) {
+    active = false;
+  } else {
+    active = true;
+  }
+
   const user = await User.findByIdAndUpdate(
     req.body._id,
     {
@@ -117,7 +125,7 @@ router.put("/deleteUser", Auth, UserAuth, Admin, async (req, res) => {
       email: req.body.email,
       password: hash,
       roleId: req.body.roleId,
-      active: false,
+      active: active,
     },
     { new: true }
   );

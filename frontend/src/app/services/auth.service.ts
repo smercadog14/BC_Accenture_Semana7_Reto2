@@ -14,10 +14,6 @@ export class AuthService {
     this.admin = false;
   }
 
-  registerUser(user: any) {
-    return this.http.post(this.env + 'user/registerUser', user);
-  }
-
   login(user: any) {
     return this.http.post(this.env + 'auth/login', user);
   }
@@ -42,14 +38,11 @@ export class AuthService {
   }
 
   setAdmin(admin: boolean) {
+    if (admin) localStorage.setItem('admin', 'true');
     this.admin = admin;
   }
 
   getAdmin() {
-    return this.admin;
-  }
-
-  getRoles() {
-    return this.http.get<any>(this.env + 'role/listRole');
+    return !!localStorage.getItem('admin');
   }
 }

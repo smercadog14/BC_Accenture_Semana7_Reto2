@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+import { RoleService } from '../../services/role.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +15,12 @@ export class RegisterUserComponent implements OnInit {
   public errorMessage: String;
   public roles: any;
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private userS: UserService,
+    private roleS: RoleService
+  ) {
     this.registerData = {};
     this.successMessage = '';
     this.errorMessage = '';
@@ -21,9 +28,8 @@ export class RegisterUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.auth.getRoles().subscribe((res) => {
+    this.roleS.listRoles().subscribe((res) => {
       this.roles = res.role;
-      console.log('RegisterUserComponent ~ roles', this.roles);
     });
   }
 
@@ -38,10 +44,9 @@ export class RegisterUserComponent implements OnInit {
       this.closeAlert();
       this.registerData = {};
     } else {
-      this.auth.registerUser(this.registerData).subscribe(
+      this.userS.registerUser(this.registerData).subscribe(
         (res: any) => {
           this.registerData = {};
-          this.router.navigate(['/listUser']);
         },
         (err) => {
           this.errorMessage = err.error;

@@ -42,32 +42,51 @@
                     <mat-panel-description>
 
 
-                        <mat-grid-list cols="1" rowHeight="10:1">
-                            <mat-grid-tile>
-                                Nombre : <span class=" spacer"></span> {{ user.name }}
-                                <mat-divider></mat-divider>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                Email : <span class="spacer"></span> {{ user.email }}
-                                <mat-divider></mat-divider>
-                            </mat-grid-tile>
-                            <mat-grid-tile>
-                                Rol : <span class="spacer"></span> {{ user.roleId.name }}
+                        <div class="col-12 col-lg-12" *ngIf="errorMessage">
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <div class="alert-message">
+                                    {{ errorMessage }}
+                                </div>
 
-                            </mat-grid-tile>
+                                <button type="button" class="close" (click)="closeX()" data-dismiss="alert"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">X</span>
+                                </button>
+                            </div>
+                        </div>
 
-                        </mat-grid-list>
-
-
-
-
+                        <div class="container">
+                            <mat-form-field>
+                                <input [(ngModel)]="user.name" matInput placeholder="Name" required />
+                            </mat-form-field>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Role</mat-label>
+                                <mat-select [(ngModel)]="user.roleId._id">
+                                    <mat-option *ngFor="let role of roles" [value]="role._id"> {{role.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input [(ngModel)]="user.email" matInput placeholder="Email" required />
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input (ngModel)="user.password" matInput placeholder="Password" />
+                            </mat-form-field>
+                        </div>
 
 
 
                     </mat-panel-description>
 
                     <mat-action-row>
-                        <span class="spacer"></span>
+                        <button class="update" (click)="updateUser(user)" mat-raised-button>
+                            Update
+                        </button>
+
+                        <button class=" changeStatus" (click)="deactivateUser(user)" mat-raised-button>
+                            Status
+                        </button>
+                        <span class=" spacer"></span>
                         <mat-icon color="primary" (click)="deleteUser(user)">
                             delete
                         </mat-icon>

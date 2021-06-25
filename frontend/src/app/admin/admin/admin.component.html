@@ -2,11 +2,14 @@
     <mat-tab-group mat-align-tabs="center">
 
         <mat-tab label="User" class="color">
-            <mat-tab-group mat-align-tabs="center">
-                <mat-tab label="Create">
+            <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChanged($event)">
+
+
+                <mat-tab label="Create" routerLink="createUser" isActive>
                     <app-register-user></app-register-user>
                 </mat-tab>
-                <mat-tab label="List">
+
+                <mat-tab label="List" routerLink="listUser">
                     <app-list-user></app-list-user>
                 </mat-tab>
 
@@ -15,11 +18,11 @@
 
         </mat-tab>
         <mat-tab label="Role">
-            <mat-tab-group mat-align-tabs="center">
-                <mat-tab label="Create">
+            <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChanged2($event)">
+                <mat-tab label="Create" routerLink="registerRole">
                     <app-register-role></app-register-role>
                 </mat-tab>
-                <mat-tab label="List">
+                <mat-tab label="List" routerLink="listRole">
                     <app-list-role></app-list-role>
                 </mat-tab>
 
