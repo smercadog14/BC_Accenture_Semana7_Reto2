@@ -1,2 +1,2 @@
-# BC_Accenture_Semana4_Reto1
-Creando un Api para un Board Scrum y sus Tasks
+# BC_Accenture_Semana7_Reto2
+Creando un Api para un Board Scrum y sus Tasks All Admin Methods
